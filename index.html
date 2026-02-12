@@ -507,6 +507,154 @@
             margin-bottom: 2rem;
         }
 
+        /* Why SecondSet Section */
+        .why-secondset {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .why-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .comparison-card {
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .comparison-card.highlight {
+            background: var(--gradient-card);
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .comparison-card.highlight::before {
+            content: '⭐ Best for Small Teams';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .comparison-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .comparison-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0;
+            flex: 1;
+        }
+
+        .comparison-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+
+        .comparison-label.old {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+        }
+
+        .comparison-label.new {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--green);
+        }
+
+        .comparison-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .comparison-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .comparison-list li svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .comparison-list li.negative {
+            color: var(--gray-600);
+        }
+
+        .comparison-list li.positive {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .why-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .why-feature-item {
+            text-align: center;
+        }
+
+        .why-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-feature-item h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .why-feature-item p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
         /* Footer */
         footer {
             background: var(--dark);
@@ -625,6 +773,11 @@
             .features-grid,
             .steps-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .comparison-grid,
+            .why-features {
+                grid-template-columns: 1fr;
             }
 
             .footer-container {
@@ -749,9 +902,41 @@
 
             .features,
             .how-it-works,
+            .why-secondset,
             .security,
             .cta {
                 padding: 3rem 0;
+            }
+
+            .why-container {
+                padding: 0 1rem;
+            }
+
+            .comparison-card {
+                padding: 1.5rem;
+            }
+
+            .comparison-card.highlight::before {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.75rem;
+                top: -10px;
+            }
+
+            .comparison-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .comparison-label {
+                align-self: flex-start;
+            }
+
+            .why-features {
+                gap: 2rem;
+            }
+
+            .why-icon {
+                font-size: 2.5rem;
             }
 
             .features-grid {
@@ -1073,6 +1258,135 @@
                     <div class="step-number">3</div>
                     <h3>Start Managing Treasury</h3>
                     <p>Submit payment requests, get approvals, and release funds. Required signers approve with biometric authentication. Transactions execute on-chain instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why SecondSet Section -->
+    <section class="why-secondset">
+        <div class="why-container">
+            <div class="section-header animate-on-scroll fade-up">
+                <h2>Built for Teams of Any Size</h2>
+                <p>Enterprise-grade security without the enterprise headaches or costs</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card animate-on-scroll fade-up stagger-1">
+                    <div class="comparison-header">
+                        <h3>Traditional Hardware Wallets</h3>
+                        <span class="comparison-label old">Old Way</span>
+                    </div>
+                    <ul class="comparison-list">
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Buy and manage multiple devices ($100+ each)
+                        </li>
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Physical devices to lose or damage
+                        </li>
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Seed phrases to manage and secure
+                        </li>
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            No built-in approval workflows
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card animate-on-scroll fade-up stagger-2">
+                    <div class="comparison-header">
+                        <h3>Enterprise Custody Solutions</h3>
+                        <span class="comparison-label old">Old Way</span>
+                    </div>
+                    <ul class="comparison-list">
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            High fees and account minimums
+                        </li>
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Weeks to onboard and setup
+                        </li>
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Complex legal agreements and KYC
+                        </li>
+                        <li class="negative">
+                            <svg width="20" height="20" fill="none" stroke="#EF4444" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Overkill for smaller treasuries
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card highlight animate-on-scroll fade-up stagger-3">
+                    <div class="comparison-header">
+                        <h3>SecondSet</h3>
+                        <span class="comparison-label new">Better Way</span>
+                    </div>
+                    <ul class="comparison-list">
+                        <li class="positive">
+                            <svg width="20" height="20" fill="none" stroke="#10B981" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Use devices you already own
+                        </li>
+                        <li class="positive">
+                            <svg width="20" height="20" fill="none" stroke="#10B981" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Setup in under 60 seconds
+                        </li>
+                        <li class="positive">
+                            <svg width="20" height="20" fill="none" stroke="#10B981" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Built-in approval workflows included
+                        </li>
+                        <li class="positive">
+                            <svg width="20" height="20" fill="none" stroke="#10B981" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Enterprise security at startup pricing
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="why-features">
+                <div class="why-feature-item animate-on-scroll fade-up stagger-1">
+                    <div class="why-icon">💰</div>
+                    <h4>No Upfront Costs</h4>
+                    <p>Skip the $500+ in hardware wallets or $10k+ enterprise custody minimums. Start securing your treasury today with just your team's phones.</p>
+                </div>
+                <div class="why-feature-item animate-on-scroll fade-up stagger-2">
+                    <div class="why-icon">⚡</div>
+                    <h4>Production-Ready in Minutes</h4>
+                    <p>While enterprise solutions take weeks to onboard, SecondSet gets you from signup to secured treasury in under an hour.</p>
+                </div>
+                <div class="why-feature-item animate-on-scroll fade-up stagger-3">
+                    <div class="why-icon">📈</div>
+                    <h4>Grows With You</h4>
+                    <p>Start with 2-of-3 signing for your founding team. Scale to 3-of-5 or beyond as you grow. No migration needed.</p>
                 </div>
             </div>
         </div>
